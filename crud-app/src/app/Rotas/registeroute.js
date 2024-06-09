@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const Client = require('./models/Client'); // Certifique-se de que o caminho para o modelo do cliente está correto
 
 router.post('/', async (req, res) => {
     const { nome, funcao } = req.body;
