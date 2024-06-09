@@ -6,13 +6,11 @@ function generateToken(user) {
     return jwt.sign({ id: user.id }, secret, { expiresIn: '1h' });
 }
 
-function verifyToken(token) {
+function verifyTokenSimple(token) {
     return jwt.verify(token, secret);
 }
 
-module.exports = { generateToken, verifyToken };
-
-function verifyToken(req, res, next) {
+function verifyTokenMiddleware(req, res, next) {
     const token = req.headers['authorization'];
 
     if (!token) {
@@ -30,5 +28,4 @@ function verifyToken(req, res, next) {
     });
 }
 
-module.exports = { generateToken, verifyToken };
-
+module.exports = { generateToken, verifyTokenSimple, verifyTokenMiddleware };

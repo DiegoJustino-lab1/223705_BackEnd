@@ -1,5 +1,5 @@
 const express = require('express');
-const auth = require('../Rotas/auth');
+const auth = require('../Midleware/auth');
 const Funcionario = require('../models/funcionario');
 const Todo = require('../models/todo');
 const router = new express.Router();

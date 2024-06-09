@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('./auth'); // Certifique-se de que o caminho para o arquivo auth é correto
+const auth = require('../Midleware/auth'); // Certifique-se de que o caminho para o arquivo auth é correto
 router.put('/rota', function(req, res) {
 
 // Rota PUT para atualizar um usuário
