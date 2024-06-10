@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../Midleware/auth'); // Certifique-se de que o caminho para o arquivo auth é correto
+const auth = require('../Midleware/auth'); 
 router.put('/rota', function(req, res) {
 
 // Rota PUT para atualizar um usuário
 router.put('/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ['name', 'email', 'password', 'age']; // substitua por seus próprios campos
+    const allowedUpdates = ['name', 'email', 'password', 'age']; 
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
     if (!isValidOperation) {

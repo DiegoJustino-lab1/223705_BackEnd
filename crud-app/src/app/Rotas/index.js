@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 const port = 3000;
-
-// Importe os roteadores
 const loginRouter = require('./loginrota');
 const registerRouter = require('./registeroute'); 
 const todoRouter = require('./todorota');
@@ -42,12 +40,10 @@ app.post("/", async (req, res) => {
     }
 });
 
-// Use os roteadores
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/todos', todoRouter);
 
-// Defina o caminhoRouter
 const caminhoRouter = express.Router();
 
 caminhoRouter.get('/', function(req, res, next) {

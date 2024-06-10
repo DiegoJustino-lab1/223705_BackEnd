@@ -5,7 +5,7 @@ function auth(req, res, next) {
     if (!token) return res.status(401).send({ error: 'Acesso negado. Nenhum token fornecido.' });
 
     try {
-        const decoded = jwt.verify(token, 'secret'); // Substitua 'secret' pela sua chave secreta real
+        const decoded = jwt.verify(token, 'secret'); 
         req.user = decoded;
         next();
     } catch (error) {

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const secret = 'seu segredo aqui'; // substitua por sua própria chave secreta
+const secret = 'secret'; 
 
 function generateToken(user) {
     return jwt.sign({ id: user.id }, secret, { expiresIn: '1h' });
